@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.alphabetic-list {
+  list-style-type: none;
+  counter-reset: alpha;
+}
+.alphabetic-list li {
+  counter-increment: alpha;
+}
+.alphabetic-list li::before {
+  content: counter(alpha, upper-alpha) ". ";
+  font-weight: bold;
+}
+/* Custom CSS for Nested List Numbering */
+/* Custom CSS for Main List Counter */
+.custom-counter {
+  list-style-type: none;
+  /* Remove default list styling */
+  counter-reset: main-counter;
+  /* Reset the main counter for the outer list */
+}
+.custom-counter li {
+  counter-increment: main-counter;
+  /* Increment the main counter for each list item */
+}
+.custom-counter li::before {
+  content: counter(main-counter, decimal) ". ";
+  /* Display the main numbering (e.g., 1.) */
+  font-weight: bold;
+}
+/* Custom CSS for Nested List Counter */
+.sub-counter {
+  list-style-type: none;
+  /* Remove default list styling */
+  counter-reset: sub-counter;
+  padding: 0px;
+  /* Reset the sub-counter for nested lists */
+}
+
+ol.sub-counter.space-y-6.list-inside {
+  padding: 0px;
+}
+
+.sub-counter li {
+  counter-increment: sub-counter;
+  /* Increment the sub-counter for each nested list item */
+}
+.sub-counter li::before {
+  content: counter(main-counter, decimal) "." counter(sub-counter, decimal) ". ";
+  /* Display the sub-numbering (e.g., 1.1.) */
+  font-weight: bold;
+}
+.sub-sub-counter {
+  counter-reset: sub-sub-counter;
+}
+.sub-sub-counter li {
+  counter-increment: sub-sub-counter;
+}
+.sub-sub-counter li::before {
+  content: counter(main-counter, decimal) "." counter(sub-counter, decimal) "."
+    counter(sub-sub-counter, decimal) ". ";
+  font-weight: bold;
+}
+
+.ant-tabs-tab-active .tab-label {
+  color: black !important;
+}
+
+.grayishText {
+  color: #878787;
+}
+
+.common-border {
+  @apply border-[1px] border-gray-300 rounded-md;
+}
+
+.border-tb {
+  @apply border-gray-200 border-t-[1px] border-b-[1px];
+}
+
+.sidebar-border {
+  border: 4px double #e0dddd;
+}
+
+input[type="text"] {
+  @apply w-full common-border p-1 block focus:outline-none;
+}
+
+.create-ivt-btn {
+  @apply bg-[#FB8171] rounded p-1 px-8 text-white;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  font-family: Roboto;
+}
+
+.invt input.legal {
+  padding: 7px;
+  width: 255px;
+  border-radius: 3px;
+}
+
+.react-tel-input .form-control {
+  font-size: 16px !important;
+  height: 42px;
+  width: 380px;
+}
+
+.absClassName {
+  @apply font-semibold absolute left-2  p-[6px] bg-white whitespace-nowrap mx-2 my-2 text-xs text-[#878787];
+}
+
+.invt.input-container {
+  position: relative;
+  margin: 10px 0;
+}
+
+.invt > input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.invt label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 16px;
+  color: #aaa;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #878787;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.headingtemplateClassName{
+  @apply font-bold my-2 text-sm text-center;
+}
+.textdesignClassName{
+  @apply font-bold text-start;
+}
+
+.spandesignClassName{
+  @apply text-start mx-1 w-full;
+}
+
+.headingClassName{
+  @apply font-bold my-2 text-sm text-start;
+}
